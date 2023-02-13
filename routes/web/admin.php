@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\ForgotPasswordController;
 use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\Dashboard\MainController;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Route;
 
@@ -40,4 +41,20 @@ Route::group([
     Route::post('forgot-password', [ForgotPasswordController::class, 'handleForgotPassword']);
     Route::get('reset-password/{token}', [ResetPassword::class, 'resetPassword']);
     Route::post('reset-password', [ResetPassword::class, 'handleResetPassword']);
+});
+
+
+/*
+ | -----------------------------------------------------------------------------
+ | Dashboard Routes
+ | -----------------------------------------------------------------------------
+ | 
+ | This route group uses the "" prefix and contains all of the
+ | routes needed for dashboard -> main page routing.
+ */
+Route::group([
+    'namespace' => 'Dashboard',
+    'as' => 'dashboard.',
+], function () {
+    Route::get('', [MainController::class, 'index']);
 });

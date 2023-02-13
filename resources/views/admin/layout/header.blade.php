@@ -7,7 +7,7 @@
     <title>@yield('title') | Linkly</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
