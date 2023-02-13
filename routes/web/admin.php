@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+/*
+ | -----------------------------------------------------------------------------
+ | Authentication Routes
+ | -----------------------------------------------------------------------------
+ | 
+ | This route group uses the "auth" prefix and contains all of the
+ | routes needed for authentication.
+ */
+Route::group([
+    'namespace' => 'Auth',
+    'prefix' => 'auth',
+    'as' => 'auth.',
+], function () {
+    Route::get('login', [LoginController::class, 'login']);
+    Route::get('forgot-password', [LoginController::class, 'forgotPassword']);
 });
