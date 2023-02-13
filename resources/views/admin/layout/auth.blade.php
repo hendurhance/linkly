@@ -123,10 +123,10 @@
         // INITIALIZATION OF BOOTSTRAP VALIDATION
         // =======================================================
         HSBsValidation.init('.js-validate', {
-          onSubmit: data => {
-            data.event.preventDefault()
-            alert('Submited')
-          }
+        //   onSubmit: data => {
+        //     // data.event.preventDefault()
+        //     // alert('Submited')
+        //   }
         })
 
 

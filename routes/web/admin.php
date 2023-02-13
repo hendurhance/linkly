@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\ForgotPasswordController;
 use App\Http\Controllers\Admin\Auth\LoginController;
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,5 +35,9 @@ Route::group([
     'as' => 'auth.',
 ], function () {
     Route::get('login', [LoginController::class, 'login']);
-    Route::get('forgot-password', [LoginController::class, 'forgotPassword']);
+    Route::post('login', [LoginController::class, 'handleLogin'])->name('login.handle');
+    Route::get('forgot-password', [ForgotPasswordController::class, 'forgotPassword']);
+    Route::post('forgot-password', [ForgotPasswordController::class, 'handleForgotPassword']);
+    Route::get('reset-password/{token}', [ResetPassword::class, 'resetPassword']);
+    Route::post('reset-password', [ResetPassword::class, 'handleResetPassword']);
 });

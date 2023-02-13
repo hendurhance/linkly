@@ -26,8 +26,7 @@
 
           <div class="text-center">
             <a class="btn btn-link" href="/admin/auth/login">
-              <i class="bi-chevron-left"></i> Back to Sign in
-            </a>
+              <i class="bi-chevron-left"></i> Back to Sign in</a>
           </div>
         </div>
       </form>

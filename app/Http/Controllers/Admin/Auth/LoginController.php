@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Auth\LoginRequest;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -22,8 +23,13 @@ class LoginController extends Controller
         return view('admin.auth.login');
     }
 
-    public function forgotPassword()
+    /**
+     * Handle login request
+     * @param LoginRequest $request
+     * @return \Illuminate\Http\Response
+     */
+    public function handleLogin(LoginRequest $request)
     {
-        return view('admin.auth.forgot-password');
+        return $request->validated();
     }
 }
