@@ -35,7 +35,7 @@ Route::group([
     'prefix' => 'auth',
     'as' => 'auth.',
 ], function () {
-    Route::get('login', [LoginController::class, 'login']);
+    Route::get('login', [LoginController::class, 'login'])->name('login');
     Route::post('login', [LoginController::class, 'handleLogin'])->name('login.handle');
     Route::get('forgot-password', [ForgotPasswordController::class, 'forgotPassword']);
     Route::post('forgot-password', [ForgotPasswordController::class, 'handleForgotPassword']);
@@ -55,6 +55,7 @@ Route::group([
 Route::group([
     'namespace' => 'Dashboard',
     'as' => 'dashboard.',
+    'middleware' => ['auth:admin'],
 ], function () {
-    Route::get('', [MainController::class, 'index']);
+    Route::get('', [MainController::class, 'index'])->name('index');
 });

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
+use function Termwind\ask;
+
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -17,7 +19,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/';
 
     /**
      * The namespace for "controllers" for your application
@@ -52,6 +54,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('api')
             ->namespace($this->namespace.'\API')
             ->prefix('api/v1')
+            ->as('api.')
             ->group(base_path('routes/api/v1/api.php'));
     }
 

@@ -36,9 +36,14 @@ class LoginController extends Controller
      */
     public function handleLogin(LoginRequest $request)
     {
-        // $url = session()->get('url.intended') ?? route('admin.dashboard.index');
+        $url = session()->get('url.intended') ?? route('admin.dashboard.index');
         $authenticate = $this->action->authenticate($request->validated(), $request->remember);
-        return $authenticate;
+        if($authenticate)
+        {
+            dd(auth()->user());
+        }else{
+             dd($authenticate);
+        }
         // return $authenticate ? redirect()->intended($url) : redirect()->back()->with('error', 'Invalid credentials, please try again.');
     }
 

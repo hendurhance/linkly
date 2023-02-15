@@ -22,11 +22,13 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
+            if ($guard === 'admin' && Auth::guard($guard)->check()) {
+                return redirect()->route('admin.dashboard.index');
+            } elseif ($guard === 'web' && Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }
         }
-
+    
         return $next($request);
     }
 }
