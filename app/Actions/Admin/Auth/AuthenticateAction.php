@@ -18,4 +18,22 @@ class AuthenticateAction{
         return Auth::guard('admin')->attempt($data, $remember);
     }
 
+    /**
+     * Logout admin users
+     * @return Auth
+     */
+    public function logout()
+    {
+        return Auth::guard('admin')->logout();
+    }
+
+    /**
+     * Get authenticated admin user
+     * @return Auth
+     */
+    public function admin()
+    {
+        return Auth::guard('admin')->user();
+    }
+
 }
