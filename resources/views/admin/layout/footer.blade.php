@@ -10,3 +10,6 @@
 
   <!-- JS Front -->
   <script src="/assets/js/theme.min.js"></script>
+  <!-- Toast JS -->
+  <script src="/assets/vendor/notify/js/app.js"></script>
+  <script src="/assets/vendor/notify/js/notify.js"></script>

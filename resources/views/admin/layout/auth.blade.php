@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 @include('admin.layout.header')
+
 <body class="d-flex align-items-center min-h-100">
+  <!-- ========== TOASTER ========== -->
+  @include('admin.layout.notify')
+  <!-- ========== END TOASTER ========== -->
 
   <script src="/assets/js/hs.theme-appearance.js"></script>
-
   <!-- ========== HEADER ========== -->
   <header class="position-absolute top-0 start-0 end-0 mt-3 mx-3">
     <div class="d-flex d-lg-none justify-content-between">
@@ -26,7 +30,7 @@
           <div class="position-absolute top-0 start-0 end-0 mt-3 mx-3">
             <div class="d-none d-lg-flex justify-content-between">
               <a href="#">
-                <img class="w-100" src="/assets/svg/logos/logo.svg" alt="Image Description" data-hs-theme-appearance="default" style="min-width: 4rem; max-width: 4rem;">
+                <img class="w-100" src="/assets/svg/logos/logo.svg" alt="Image  Description" data-hs-theme-appearance="default" style="min-width: 4rem; max-width: 4rem;">
                 <img class="w-100" src="/assets/svg/logos-light/logo.svg" alt="Image Description" data-hs-theme-appearance="dark" style="min-width: 4rem; max-width: 4rem;">
               </a>
             </div>
@@ -93,7 +97,6 @@
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
   @include('admin.layout.footer')
-
 
   <!-- JS Plugins Init. -->
   <script>

@@ -32,4 +32,8 @@
     </style>
 
     @include('admin.layout.scripts')
+    
+    <!-- Toast CSS -->
+    <link rel="stylesheet" href="/assets/vendor/notify/css/notify.css">
+    <link rel="stylesheet" href="/assets/vendor/notify/css/app.css">
 </head>
