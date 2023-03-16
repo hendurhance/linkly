@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Auth;
 
-use App\Actions\Admin\Auth\AuthenticateAction;
+use App\Actions\Auth\AuthenticateAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Auth\LoginRequest;
 use Illuminate\Http\Request;
@@ -13,10 +13,11 @@ class LoginController extends Controller
 
     protected $action;
 
-    public function __construct()
+
+    public function __construct(protected string $guard = 'admin')
     {
         $this->middleware('guest:admin', ['except' => ['logout']]);
-        $this->action = new AuthenticateAction();
+        $this->action = new AuthenticateAction($this->guard);
     }
 
 
