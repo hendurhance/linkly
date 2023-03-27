@@ -38,7 +38,7 @@ Route::group([
     Route::get('login', [LoginController::class, 'login'])->name('login');
     Route::post('login', [LoginController::class, 'handleLogin'])->name('login.handle');
     Route::get('forgot-password', [ForgotPasswordController::class, 'forgotPassword']);
-    Route::post('forgot-password', [ForgotPasswordController::class, 'handleForgotPassword']);
+    Route::post('forgot-password', [ForgotPasswordController::class, 'handleForgotPassword'])->name('forgot.password.handle');
     Route::get('reset-password/{token}', [ResetPassword::class, 'resetPassword']);
     Route::post('reset-password', [ResetPassword::class, 'handleResetPassword']);
 });
